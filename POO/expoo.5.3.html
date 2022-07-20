@@ -1,0 +1,63 @@
+<script>
+
+    class Serie {
+        #titulo;
+
+        constructor(titulo) {
+            this.setTitulo(titulo);
+        }
+
+        setTitulo(titulo) { this.#titulo = titulo; }
+        getTitulo() { return this.#titulo; }
+    }
+
+    class Comedia extends Serie {
+        #risos;
+
+        constructor(titulo, risos) {
+            super(titulo);
+            this.setRisos(risos);
+        }
+
+        setRisos(risos) { this.#risos = risos; }
+        getRisos() { return this.#risos; }
+    }
+
+    class Suspense extends Serie {
+        #gritos;
+
+        constructor(titulo, gritos) {
+            super(titulo);
+            this.setGritos(gritos);
+        }
+
+        setGritos(gritos) { this.#gritos = gritos; }
+        getGritos() { return this.#gritos; }
+    }
+
+    class Syfy extends Serie {
+        #tirosLaser;
+
+        constructor(titulo, tirosLaser) {
+            super(titulo);
+            this.setTirosLaser(tirosLaser);
+        }
+
+        setTirosLaser(tirosLaser) { this.#tirosLaser = tirosLaser; }
+        getTirosLaser() { return this.#tirosLaser; }
+    }
+
+    /**
+     * Testes unitários:
+     **/
+
+     const friends = new Comedia('F.r.i.e.n.d.s.', 50);
+     console.log(friends);
+
+     const supernatural = new Suspense('Super Natural', 20);
+     console.log(supernatural);
+
+     const startrek = new Syfy('Star Trek', 200);
+     console.log(startrek);
+
+</script>

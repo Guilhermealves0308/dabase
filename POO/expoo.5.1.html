@@ -1,0 +1,56 @@
+<script>
+
+    class Car {
+        #brand;
+        #model;
+
+        setBrand(brand) { this.#brand = brand; }
+        setModel(model) { this.#model = model; }
+
+        getBrand() { return this.#brand; }
+        getModel() { return this.#model; }
+    }
+
+    class Utilit extends Car {
+        #axis;
+        #weight;
+
+        setAxis(axis) { this.#axis = axis; }
+        setWeight(weight) { this.#weight = weight; }
+
+        getAxis() { return this.#axis; }
+        getWeight() { return this.#weight; }
+
+    }
+
+    class Sport extends Car {
+        #velocity;
+        #cilinders;
+
+        setVelocity(velocity) { this.#velocity = velocity; }
+        setCilinders(cilinders) { this.#cilinders = cilinders; }
+
+        getVelocity() { return this.#velocity; }
+        getCilinders() { return this.#cilinders; }
+    }
+
+    /**
+     * Teste unitário:
+     **/
+
+    // Cria objeto instanciando a classe secundária:
+    const veiculo1 = new Utilit();
+
+    // Set atributos:
+    veiculo1.setBrand('Mercedes Benz');
+    veiculo1.setModel('1350');
+    veiculo1.setAxis(3);
+    veiculo1.setWeight(14250);
+
+    // Exibe o objeto:
+    console.log(veiculo1);
+
+    // Lista atributos:
+    console.log(veiculo1.getBrand(), veiculo1.getAxis());
+
+</script>

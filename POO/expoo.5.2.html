@@ -1,0 +1,88 @@
+<script>
+
+    class Animalia {
+
+        #id;
+        #nome;
+        #especie;
+        #nascimento;
+
+        constructor(id, nome = '') { this.setId(id); this.setNome(nome); }
+
+        setId(id) { this.#id = id; return true; }
+        setNome(nome) { this.#nome = nome; }
+        setEspecie(especie) { this.#especie = especie; }
+        setNascimento(nascimento) { this.#nascimento = nascimento; return true; }
+
+        getId() { return this.#id; }
+        getNome() { return this.#nome; }
+        getEspecie() { return this.#especie; }
+        getNascimento() { return this.#nascimento; }
+
+    }
+
+    class Canideo extends Animalia {
+
+        #raca;
+
+        constructor(id, nome, raca) {
+
+            // Passa id e nome para o contrutor de 'Animalia':
+            super(id, nome);
+
+            this.setRaca(raca);
+        }
+
+        setRaca(raca) { this.#raca = raca; }
+
+        verDados() {
+            return {
+                'id': this.getId(),
+                'nome': this.getNome(),
+                'especie': this.getEspecie(),
+                'nascimento': this.getNascimento(),
+                'raca': this.#raca
+            }
+        }
+    }
+
+    class Aracnideo extends Animalia {
+
+        #subespecie;
+
+        constructor(id, nome, subespecie) {
+
+            // Passa id e nome para o contrutor de 'Animalia':
+            super(id, nome);
+
+            this.setSubespecie(subespecie);
+        }
+
+        setSubespecie(subespecie) { this.#subespecie = subespecie; }
+
+        verDados() {
+            return {
+                'id': this.getId(),
+                'nome': this.getNome(),
+                'especie': this.getEspecie(),
+                'nascimento': this.getNascimento(),
+                'subespecie': this.#subespecie
+            }
+        }
+    }
+
+    /**
+     * Teste unitário:
+     */
+
+    // Cria objeto:
+    const fofonho = new Aracnideo(121212, 'Fofonho', 'Avicularia Redbun');
+
+    // Set atributos:
+    fofonho.setEspecie('Avicularia Avicularia');
+    fofonho.setNascimento('10/12/2021');
+
+    // Exibe objeto:
+    console.log(fofonho.verDados());
+    
+</script>
